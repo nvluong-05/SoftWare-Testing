@@ -9,12 +9,14 @@ API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 class Translator:
     def __init__(self):
-        self.model = "google/gemini-2.0-flash-lite-001"
+        self.model = os.getenv("OPENROUTER_MODEL") or "google/gemini-3.5-flash-lite"
         self.api_key = os.getenv("OPENROUTER_API_KEY") or "PLACEHOLDER_KEY"
 
     def translate_text(self, text):
-        if not text:
+        if not text or not text.strip():
             return None
+
+        text = text.strip()
 
         is_short = len(text.split()) <= 5
 

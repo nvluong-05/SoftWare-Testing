@@ -1,9 +1,12 @@
-venv/
 __pycache__/
-*.exe
-.vscode/
+*.pyc
 .env
+venv/
+.vscode/
 data.db
 build/
 dist/
 *.spec
+.test_tmp/
+reports/.coverage
+reports/test-*.db

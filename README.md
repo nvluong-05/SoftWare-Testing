@@ -95,6 +95,8 @@ Tạo file `.env` trong thư mục gốc của dự án và thêm API key:
 
 ```env
 OPENROUTER_API_KEY=your_api_key_here
+# Tùy chọn; mặc định ứng dụng dùng model bên dưới
+OPENROUTER_MODEL=google/gemini-3.5-flash-lite
 ```
 
 Trong đó `your_api_key_here` là API key lấy từ OpenRouter.
@@ -106,6 +108,21 @@ Sau khi cài đặt xong, chạy lệnh:
 ```bash
 python main.py
 ```
+
+## Chạy kiểm thử
+
+Trên Windows PowerShell:
+
+```powershell
+python -m pip install -r requirements-test.txt
+python run_tests.py
+```
+
+Runner dùng `unittest`, mock toàn bộ API và hook hệ điều hành, chạy Qt ở chế độ
+offscreen, sau đó tạo kết quả tại `reports/test_results.txt` và báo cáo coverage
+tại `reports/coverage.txt`, `reports/coverage.xml`, `reports/coverage.json`.
+Thiết kế test, ma trận truy vết và kịch bản demo nằm trong
+`docs/3_2_thiet_ke_kiem_thu.md`.
 
 Khi ứng dụng chạy thành công, chương trình sẽ chạy ngầm dưới khay hệ thống.
 
