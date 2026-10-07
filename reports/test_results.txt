@@ -1,0 +1,116 @@
+test_req05_add_to_notebook_database_error_returns_false (test_database_history.DatabaseHistoryTests.test_req05_add_to_notebook_database_error_returns_false) ... ok
+test_req05_add_to_notebook_success_and_defaults (test_database_history.DatabaseHistoryTests.test_req05_add_to_notebook_success_and_defaults) ... ok
+test_req06_init_db_creates_parent_and_schema_idempotently (test_database_history.DatabaseHistoryTests.test_req06_init_db_creates_parent_and_schema_idempotently) ... ok
+test_req07_empty_and_populated_notebook (test_database_history.DatabaseHistoryTests.test_req07_empty_and_populated_notebook) ... ok
+test_req08_percent_and_underscore_are_literal_search_text (test_database_history.DatabaseHistoryTests.test_req08_percent_and_underscore_are_literal_search_text) ... ok
+test_req08_search_word_meaning_vietnamese_and_apostrophe (test_database_history.DatabaseHistoryTests.test_req08_search_word_meaning_vietnamese_and_apostrophe) ... ok
+test_req09_fetch_tags_and_filter_combinations (test_database_history.DatabaseHistoryTests.test_req09_fetch_tags_and_filter_combinations) ... ok
+test_req10_integration_save_read_search_delete (test_database_history.DatabaseHistoryTests.test_req10_integration_save_read_search_delete) ... ok
+test_req07_render_empty_and_populated_table (test_history_ui.HistoryWindowTests.test_req07_render_empty_and_populated_table) ... ok
+test_req08_render_passes_trimmed_search_and_tag (test_history_ui.HistoryWindowTests.test_req08_render_passes_trimmed_search_and_tag) ... ok
+test_req10_cancel_delete_keeps_data (test_history_ui.HistoryWindowTests.test_req10_cancel_delete_keeps_data) ... ok
+test_req10_confirm_delete_yes_deletes_and_refreshes (test_history_ui.HistoryWindowTests.test_req10_confirm_delete_yes_deletes_and_refreshes) ... ok
+test_req11_history_close_reopens_popup (test_history_ui.HistoryWindowTests.test_req11_history_close_reopens_popup) ... ok
+test_req02_translate_success_displays_popup (test_main.AppControllerTests.test_req02_translate_success_displays_popup) ... ok
+test_req03_translate_none_does_not_display_popup (test_main.AppControllerTests.test_req03_translate_none_does_not_display_popup) ... ok
+test_req05_save_failure_updates_popup_without_success_notification (test_main.AppControllerTests.test_req05_save_failure_updates_popup_without_success_notification) ... ok
+test_req05_save_success_extracts_phonetics_and_refreshes_visible_history (test_main.AppControllerTests.test_req05_save_success_extracts_phonetics_and_refreshes_visible_history) ... ok
+test_req07_open_history_refreshes_and_switches_windows (test_main.AppControllerTests.test_req07_open_history_refreshes_and_switches_windows) ... ok
+test_req11_popup_close_cancel_ignores_event (test_main.AppControllerTests.test_req11_popup_close_cancel_ignores_event) ... ok
+test_req11_popup_close_minimize_hides_and_keeps_running (test_main.AppControllerTests.test_req11_popup_close_minimize_hides_and_keeps_running) ... ok
+test_req11_popup_close_quit_calls_quit_app (test_main.AppControllerTests.test_req11_popup_close_quit_calls_quit_app) ... ok
+test_req11_tray_double_click_opens_popup_only_for_double_click (test_main.AppControllerTests.test_req11_tray_double_click_opens_popup_only_for_double_click) ... ok
+test_req01_hotkey_copies_strips_and_emits (test_main.HotkeyBridgeTests.test_req01_hotkey_copies_strips_and_emits) ... ok
+test_req01_hotkey_does_not_emit_for_empty_selection (test_main.HotkeyBridgeTests.test_req01_hotkey_does_not_emit_for_empty_selection) ... ok
+test_tc_db_01_init_db_creates_table (test_notebook_db.TestNotebookDB.test_tc_db_01_init_db_creates_table)
+TC_DB_01: Verify init_db properly creates 'data' table with expected schema. ... ok
+test_tc_db_02_add_valid_word_default_tag (test_notebook_db.TestNotebookDB.test_tc_db_02_add_valid_word_default_tag)
+TC_DB_02: Adding a valid word with default tag saves successfully. ... ok
+test_tc_db_03_add_word_custom_tag (test_notebook_db.TestNotebookDB.test_tc_db_03_add_word_custom_tag)
+TC_DB_03: Adding a word with custom tag saves with specified tag. ... ok
+test_tc_db_04_fetch_vocab_all_ordered_by_timestamp_desc (test_notebook_db.TestNotebookDB.test_tc_db_04_fetch_vocab_all_ordered_by_timestamp_desc)
+TC_DB_04: Fetching all vocab returns records ordered by timestamp DESC. ... ok
+test_tc_db_05_fetch_vocab_search_by_word (test_notebook_db.TestNotebookDB.test_tc_db_05_fetch_vocab_search_by_word)
+TC_DB_05: Search query matches word substring correctly. ... ok
+test_tc_db_06_fetch_vocab_search_by_definition (test_notebook_db.TestNotebookDB.test_tc_db_06_fetch_vocab_search_by_definition)
+TC_DB_06: Search query matches definition substring correctly. ... ok
+test_tc_db_07_fetch_vocab_filter_by_tag (test_notebook_db.TestNotebookDB.test_tc_db_07_fetch_vocab_filter_by_tag)
+TC_DB_07: Filtering by tag returns only records matching the exact tag. ... ok
+test_tc_db_08_fetch_vocab_combined_search_and_tag (test_notebook_db.TestNotebookDB.test_tc_db_08_fetch_vocab_combined_search_and_tag)
+TC_DB_08: Query with both search term and tag filter applies AND logic. ... ok
+test_tc_db_09_fetch_tags_distinct_sorted (test_notebook_db.TestNotebookDB.test_tc_db_09_fetch_tags_distinct_sorted)
+TC_DB_09: fetch_tags returns unique tags sorted alphabetically. ... ok
+test_tc_db_10_delete_vocab_success (test_notebook_db.TestNotebookDB.test_tc_db_10_delete_vocab_success)
+TC_DB_10: Deleting an existing word by ID removes it from database. ... ok
+test_tc_db_11_delete_non_existent_id (test_notebook_db.TestNotebookDB.test_tc_db_11_delete_non_existent_id)
+TC_DB_11: Deleting a non-existent ID does not fail or affect other records. ... ok
+test_tc_db_12_fetch_vocab_no_match (test_notebook_db.TestNotebookDB.test_tc_db_12_fetch_vocab_no_match)
+TC_DB_12: Searching for non-existent keyword returns empty list. ... ok
+test_tc_db_13_fetch_vocab_non_existent_tag (test_notebook_db.TestNotebookDB.test_tc_db_13_fetch_vocab_non_existent_tag)
+TC_DB_13: Filtering with a tag that does not exist returns empty list. ... ok
+test_tc_db_14_add_word_empty_strings (test_notebook_db.TestNotebookDB.test_tc_db_14_add_word_empty_strings)
+TC_DB_14: Boundary test: Empty string inputs are stored without crashing. ... ok
+test_tc_db_15_add_word_very_large_text (test_notebook_db.TestNotebookDB.test_tc_db_15_add_word_very_large_text)
+TC_DB_15: Boundary test: Large text payload (10KB word, 50KB definition). ... ok
+test_tc_db_16_sql_injection_resilience (test_notebook_db.TestNotebookDB.test_tc_db_16_sql_injection_resilience)
+TC_DB_16: Security/Boundary test: SQL injection payloads in search query. ... ok
+test_tc_db_17_unicode_and_vietnamese_diacritics (test_notebook_db.TestNotebookDB.test_tc_db_17_unicode_and_vietnamese_diacritics)
+TC_DB_17: Boundary test: Full Vietnamese diacritics, emojis, and special chars. ... ok
+test_random_01_database_random_vocabulary_insertion_and_integrity (test_random_fuzzing.TestRandomFuzzing.test_random_01_database_random_vocabulary_insertion_and_integrity)
+Random Test 1: Insert 30 completely random vocabulary entries with varied lengths, ... ok
+test_random_02_database_random_search_substrings (test_random_fuzzing.TestRandomFuzzing.test_random_02_database_random_search_substrings)
+Random Test 2: Perform 25 random substring searches from previously inserted words ... ok
+test_random_03_classification_word_count_fuzzing (test_random_fuzzing.TestRandomFuzzing.test_random_03_classification_word_count_fuzzing)
+Random Test 3: Generate 30 random sentences of lengths 1 to 20 words. ... ok
+test_random_04_ui_parser_fuzzing_robustness (test_random_fuzzing.TestRandomFuzzing.test_random_04_ui_parser_fuzzing_robustness)
+Random Test 4: Feed 30 randomized, malformed, or unusual strings to _parse_and_display ... ok
+test_req02_default_model_uses_active_model (test_translation.TranslatorTests.test_req02_default_model_uses_active_model) ... ok
+test_req02_empty_and_whitespace_input_returns_none (test_translation.TranslatorTests.test_req02_empty_and_whitespace_input_returns_none) ... ok
+test_req02_model_can_be_configured_from_environment (test_translation.TranslatorTests.test_req02_model_can_be_configured_from_environment) ... ok
+test_req02_short_input_boundaries_use_structured_prompt (test_translation.TranslatorTests.test_req02_short_input_boundaries_use_structured_prompt) ... ok
+test_req02_six_words_use_plain_translation_prompt (test_translation.TranslatorTests.test_req02_six_words_use_plain_translation_prompt) ... ok
+test_req02_success_posts_expected_request (test_translation.TranslatorTests.test_req02_success_posts_expected_request) ... ok
+test_req03_api_error_returns_immediately_without_retry (test_translation.TranslatorTests.test_req03_api_error_returns_immediately_without_retry) ... ok
+test_req03_api_error_without_message_uses_fallback (test_translation.TranslatorTests.test_req03_api_error_without_message_uses_fallback) ... ok
+test_req03_exception_then_success_retries_once (test_translation.TranslatorTests.test_req03_exception_then_success_retries_once) ... ok
+test_req03_malformed_response_retries_three_times (test_translation.TranslatorTests.test_req03_malformed_response_retries_three_times) ... ok
+test_req03_three_connection_failures_return_error (test_translation.TranslatorTests.test_req03_three_connection_failures_return_error) ... ok
+test_tc_tr_01_translate_empty_and_none (test_translation_parser.TestTranslationAndParser.test_tc_tr_01_translate_empty_and_none)
+TC_TR_01: translate_text returns None immediately on empty or None input. ... ok
+test_tc_tr_02_prompt_classification_short_text (test_translation_parser.TestTranslationAndParser.test_tc_tr_02_prompt_classification_short_text)
+TC_TR_02: Short text (<= 5 words) generates vocabulary/phonetics prompt. ... ok
+test_tc_tr_03_prompt_classification_long_text (test_translation_parser.TestTranslationAndParser.test_tc_tr_03_prompt_classification_long_text)
+TC_TR_03: Long text (> 5 words) generates sentence translation prompt. ... ok
+test_tc_tr_04_boundary_exact_5_words (test_translation_parser.TestTranslationAndParser.test_tc_tr_04_boundary_exact_5_words)
+TC_TR_04: Boundary: Exactly 5 words is classified as short text. ... ok
+test_tc_tr_05_boundary_exact_6_words (test_translation_parser.TestTranslationAndParser.test_tc_tr_05_boundary_exact_6_words)
+TC_TR_05: Boundary: Exactly 6 words is classified as sentence (long text). ... ok
+test_tc_tr_06_api_error_response_handling (test_translation_parser.TestTranslationAndParser.test_tc_tr_06_api_error_response_handling)
+TC_TR_06: API error in JSON response returns formatted error string. ... ok
+test_tc_tr_07_network_exception_retry_and_failure (test_translation_parser.TestTranslationAndParser.test_tc_tr_07_network_exception_retry_and_failure)
+TC_TR_07: Network exception retries 3 times then returns connection error. ... ok
+test_tc_ui_01_parse_standard_three_part_format (test_translation_parser.TestTranslationAndParser.test_tc_ui_01_parse_standard_three_part_format)
+TC_UI_01: Standard format parses meaning, phonetics, and example accurately. ... ok
+test_tc_ui_02_parse_plain_sentence_format (test_translation_parser.TestTranslationAndParser.test_tc_ui_02_parse_plain_sentence_format)
+TC_UI_02: Plain sentence format displays directly and hides phonetics/example. ... ok
+test_tc_ui_03_parse_partial_format_without_example (test_translation_parser.TestTranslationAndParser.test_tc_ui_03_parse_partial_format_without_example)
+TC_UI_03: Partial format (only translation and phonetics) handled gracefully. ... ok
+test_tc_ui_04_star_button_empty_text_prevents_save (test_translation_parser.TestTranslationAndParser.test_tc_ui_04_star_button_empty_text_prevents_save)
+TC_UI_04: Clicking star button when translation or original is empty does not emit save. ... ok
+test_tc_ui_05_star_button_valid_text_emits_save_signal (test_translation_parser.TestTranslationAndParser.test_tc_ui_05_star_button_valid_text_emits_save_signal)
+TC_UI_05: Clicking star button with valid data emits save_vocab_signal properly. ... ok
+test_req04_parse_complete_structured_translation (test_ui.TranslationPopupTests.test_req04_parse_complete_structured_translation) ... ok
+test_req04_parse_structured_translation_with_missing_parts (test_ui.TranslationPopupTests.test_req04_parse_structured_translation_with_missing_parts) ... ok
+test_req04_plain_translation_clears_stale_metadata_regression (test_ui.TranslationPopupTests.test_req04_plain_translation_clears_stale_metadata_regression) ... ok
+test_req04_show_translation_repositions_inside_screen (test_ui.TranslationPopupTests.test_req04_show_translation_repositions_inside_screen) ... ok
+test_req05_set_save_result_success_and_failure (test_ui.TranslationPopupTests.test_req05_set_save_result_success_and_failure) ... ok
+test_req05_star_rejects_missing_original_or_translation (test_ui.TranslationPopupTests.test_req05_star_rejects_missing_original_or_translation) ... ok
+test_req05_star_waits_for_storage_result_regression (test_ui.TranslationPopupTests.test_req05_star_waits_for_storage_result_regression) ... ok
+test_req11_wheel_moves_popup_up_and_down (test_ui.TranslationPopupTests.test_req11_wheel_moves_popup_up_and_down) ... ok
+
+----------------------------------------------------------------------
+Ran 76 tests in 1.648s
+
+OK
+
+Tests run: 76; failures: 0; errors: 0; coverage: 85.69%

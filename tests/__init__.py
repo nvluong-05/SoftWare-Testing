@@ -1,1 +1,1 @@
-# tests package initialization
+"""Automated tests for AI Translate."""

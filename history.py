@@ -17,8 +17,9 @@ def fetch_vocab(search="", tag="Tất cả"):
     query = "SELECT id, word, definition, phonetics, tag, timestamp FROM data WHERE 1=1"
     params = []
     if search:
-        query += " AND (word LIKE ? OR definition LIKE ?)"
-        params += [f"%{search}%", f"%{search}%"]
+        escaped = search.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+        query += " AND (word LIKE ? ESCAPE '\\' OR definition LIKE ? ESCAPE '\\')"
+        params += [f"%{escaped}%", f"%{escaped}%"]
     if tag and tag != "Tất cả":
         query += " AND tag = ?"
         params.append(tag)

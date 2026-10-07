@@ -151,6 +151,7 @@ class AppController:
             phonetics=phonetics,
             tag="General"
         )
+        self.popup.set_save_result(success)
         if success:
             self.tray.showMessage("AI Translate", f"✅ Đã lưu: '{original}'",
                                   QSystemTrayIcon.MessageIcon.Information, 2000)

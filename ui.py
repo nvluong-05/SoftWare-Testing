@@ -145,6 +145,8 @@ class TranslationPopup(QWidget):
             self.lbl_example.setVisible(bool(example))
         else:
             self.txt_translated.setText(translated_text)
+            self.lbl_phonetics.clear()
+            self.lbl_example.clear()
             self.lbl_phonetics.setVisible(False)
             self.lbl_example_title.setVisible(False)
             self.lbl_example.setVisible(False)
@@ -192,13 +194,26 @@ class TranslationPopup(QWidget):
             QTimer.singleShot(1000, self._reset_star_button)
             return
 
-        self.btn_star.setProperty("class", "saved")
-        self.style().unpolish(self.btn_star)
-        self.style().polish(self.btn_star)
-        self.btn_star.setToolTip("Đã lưu vào sổ tay ✓")
+        self.btn_star.setEnabled(False)
+        self.btn_star.setToolTip("Đang lưu...")
         self.save_vocab_signal.emit(orig, full)
 
+    def set_save_result(self, success: bool):
+        self.btn_star.setEnabled(True)
+        if success:
+            self.btn_star.setProperty("class", "saved")
+            self.style().unpolish(self.btn_star)
+            self.style().polish(self.btn_star)
+            self.btn_star.setToolTip("Đã lưu vào sổ tay ✓")
+            return
+
+        self.btn_star.setProperty("class", "")
+        self.btn_star.setStyleSheet("color: #e74c3c;")
+        self.btn_star.setToolTip("Lưu thất bại!")
+        QTimer.singleShot(1000, self._reset_star_button)
+
     def _reset_star_button(self):
+        self.btn_star.setEnabled(True)
         self.btn_star.setProperty("class", "")
         self.style().unpolish(self.btn_star)
         self.style().polish(self.btn_star)

@@ -191,6 +191,10 @@ class TestTranslationAndParser(unittest.TestCase):
         self.assertIn("Dịch: bàn phím", full_trans)
         self.assertIn("Phiên âm: /ˈkiː.bɔːd/", full_trans)
         self.assertIn("Ví dụ: mechanical keyboard", full_trans)
+
+        # The UI only marks the item as saved after storage confirms success.
+        self.assertNotEqual(self.popup.btn_star.property("class"), "saved")
+        self.popup.set_save_result(True)
         self.assertEqual(self.popup.btn_star.property("class"), "saved")
         self.assertEqual(self.popup.btn_star.toolTip(), "Đã lưu vào sổ tay ✓")
 
